@@ -15,6 +15,7 @@
             <li><a href="index.php?action=addCategorie">Ajouter Categorie</a></li>
             <li><a href="index.php?action=adddRole">Ajouter Role</a></li>
             <li><a href="index.php?action=addAct">Ajouter Acteur</a></li>
+            <li><a href="index.php?action=addReal">Ajouter Realisateur</a></li>
 
            
         </ul>

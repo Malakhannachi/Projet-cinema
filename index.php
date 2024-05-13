@@ -18,5 +18,6 @@ if(isset($_GET['action'])) {
         case "addCategorie":$ctrlCinema->addCategorie(); break;
         case "addRole": $ctrlCinema->addRole(); break;
         case "addAct" : $ctrlCinema->addAct(); break;
+        case "addReal" : $ctrlCinema->addReal(); break;
     }
 }

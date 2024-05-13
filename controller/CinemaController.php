@@ -139,10 +139,31 @@ class CinemaController
     }
     public function addReal() {
         $pdo = connect :: seConnecter();
-  $requetReal= $pdo-> query ("
-    SELECT *
-     FROM realisateur "); 
+        $requetReal= $pdo-> query ("
+         SELECT *
+         FROM realisateur "); 
 
     if (isset ($_POST["submit"])) {
-}
+        $nom_R = filter_input(INPUT_POST, "nom_R");
+        $prenom_R = filter_input(INPUT_POST, "prenom_R");
+        $date_N_R = filter_input(INPUT_POST, "date_N_R");
+        $sexe = filter_input(INPUT_POST, "sexe");
+        
+        if ($nom_R && $prenom_R && $date_N_R && $sexe) {
+            $requetReal = $pdo->prepare ("
+            INSERT INTO realisateur( nom_R, prenom_R, date_N_R, sexe)
+            VALUES (:nom_R, :prenom_R, :date_N_R, :sexe)");
+            $requetReal-> execute ([
+                "nom_R" => $nom_R,
+                "prenom_R" => $prenom_R,
+                "date_N_R" => $date_N_R,
+                "sexe" => $sexe,
+            ]);
+        header("Location: index.php?action=addReal");
+    }
+    }
+        require "view/addReal.php";
+    }
+
+      
 }
