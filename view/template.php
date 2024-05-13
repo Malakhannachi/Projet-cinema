@@ -7,6 +7,17 @@
 <head></head>
 <body>
     <nav class="uk-navbar-container" uk-navbar>
+        <ul>
+            <li><a href="index.php?action=listFilms">Films</a></li>
+            <li><a href="index.php?action=listActeurs">Acteurs</a></li>
+            <li><a href="index.php?action=listGenre">Genre</a></li>
+            <li><a href="index.php?action=listRealisateur">Realisateur</a></li> 
+            <li><a href="index.php?action=addCategorie">Ajouter Categorie</a></li>
+            <li><a href="index.php?action=adddRole">Ajouter Role</a></li>
+            <li><a href="index.php?action=addAct">Ajouter Acteur</a></li>
+
+           
+        </ul>
     </nav>
     <div id="wrapper" class="uk-container uk-container-expand">
     <main>

@@ -5,7 +5,7 @@ spl_autoload_register(function ($class_name) {
 });
 $ctrlCinema = new CinemaController();
 
-$id = $_GET['id'];  //url
+$id = isset($_GET['id']) ? $_GET["id"] : null;  //url
 
 if(isset($_GET['action'])) {
     switch($_GET['action']) {
@@ -14,6 +14,9 @@ if(isset($_GET['action'])) {
         case "listGenre":$ctrlCinema->listGenre(); break;
         case "listRealisateur":$ctrlCinema->listRealisateur(); break;
         case "castingFilms":$ctrlCinema->castingFilms($id); break;
-        
+        //case "addFilms":$ctrlCinema->addFilms(); break;
+        case "addCategorie":$ctrlCinema->addCategorie(); break;
+        case "addRole": $ctrlCinema->addRole(); break;
+        case "addAct" : $ctrlCinema->addAct(); break;
     }
 }
