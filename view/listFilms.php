@@ -9,6 +9,7 @@
             <th>duree_film</th>
             <th>note</th>
             <th>id_real</th>
+            <th>supprimer</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
                     <td><?= $film['duree_film'] ?></td>
                     <td><?= $film['note'] ?></td>
                     <td><?= $film['id_real'] ?></td>
+                    <td><a href="index.php?action=delFilms&id=<?= $film['id_film'] ?>">supprimer</a></td>
                 </tr>
                 <?php } ?>
     </tbody>

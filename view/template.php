@@ -8,6 +8,9 @@
 <body>
     <nav class="uk-navbar-container" uk-navbar>
         <ul>
+        <?php if ($_GET['action'] !== 'accueil') : ?>
+                <li><a href="index.php?action=accueil">Accueil</a></li>
+            <?php endif; ?>
             <li><a href="index.php?action=listFilms">Films</a></li>
             <li><a href="index.php?action=listActeurs">Acteurs</a></li>
             <li><a href="index.php?action=listGenre">Genre</a></li>
@@ -16,6 +19,8 @@
             <li><a href="index.php?action=adddRole">Ajouter Role</a></li>
             <li><a href="index.php?action=addAct">Ajouter Acteur</a></li>
             <li><a href="index.php?action=addReal">Ajouter Realisateur</a></li>
+            <li><a href="index.php?action=addFilms">Ajouter Film</a></li>
+            <li><a href="index.php?action=delFilms"> Film</a></li>
 
            
         </ul>

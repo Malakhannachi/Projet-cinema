@@ -164,6 +164,62 @@ class CinemaController
     }
         require "view/addReal.php";
     }
+    public function addFilms() {
+        $pdo = connect :: seConnecter();
+        $requeteFilms = $pdo->query ("
+        SELECT * 
+        FROM film");
+        if (isset ($_POST["submit"])) {
+        
+            $titre=filter_input(INPUT_POST, "titre");
+            $annee_sortie=filter_input(INPUT_POST, "annee_sortie");
+            $resume=filter_input(INPUT_POST, "resume");
+            $duree_film=filter_input(INPUT_POST, "duree_film");
+            $note=filter_input(INPUT_POST, "note");
+            $id_real=filter_input(INPUT_POST, "id_real");
+
+            if ($titre && $annee_sortie && $resume && $duree_film && $note && $id_real) {
+                $requeteFilms= $pdo->prepare("
+                INSERT INTO film( titre, annee_sortie, resume, duree_film, note , id_real)
+                VALUES(:titre , :annee_sortie, :resume, :duree_film, :note, :id_real)");
+                $requeteFilms->execute([
+                    "titre" => $titre,
+                    "annee_sortie" => $annee_sortie,
+                    "resume" => $resume,
+                    "duree_film" => $duree_film,
+                    "note" => $note,
+                    "id_real" => $id_real   
+                ]);
+                
+                header("Location: index.php?action=addFilms");
+            }
+
+        }
+        
+        require "view/addFilms.php";
+    }
+    public function delFilms($id){
+        $pdo = connect:: seConnecter ();
+        $requeteDel = $pdo-> prepare("
+        DELETE FROM film
+        WHERE id_film = :id");
+        $requeteDel-> execute(["id"=>$id]);
+        ?>
+        
+        <?php
+        header("Location: index.php?action=listFilms");
+
+    }
+    public function accueil() {
+        
+        $pdo = connect :: seConnecter();
+ 
+
+        require "view/accueil.php";
+    }
+    
+}
 
       
-}
+
+
