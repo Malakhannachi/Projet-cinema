@@ -211,11 +211,31 @@ class CinemaController
 
     }
     public function accueil() {
-        
         $pdo = connect :: seConnecter();
  
 
         require "view/accueil.php";
+    }
+    public function search() {
+        $pdo = connect :: seConnecter();
+            $requeteSearch =  $pdo->query("
+            SELECT * 
+            FROM film");
+            
+            if (isset($_POST['listFilms']) && !empty($_POST['listFilms'])) {
+                $search = $_POST['listFilms'];
+                
+                $requeteSearch = $pdo->prepare("
+                SELECT * 
+                FROM film 
+                WHERE titre LIKE CONCAT('%', :search, '%')");
+
+                $requeteSearch->execute([
+                    "search" => $search
+                ]);
+
+                require "view/resultSearch.php";
+            }
     }
     
 }

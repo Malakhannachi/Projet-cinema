@@ -21,5 +21,6 @@ if(isset($_GET['action'])) {
         case "addFilms":$ctrlCinema->addFilms(); break;
         case "delFilms":$ctrlCinema->delFilms($id); break;
         case "accueil" : $ctrlCinema->accueil(); break;
+        case "search" : $ctrlCinema->search(); break;
         }
 }
