@@ -1,11 +1,11 @@
 <?php ob_start(); 
 foreach($requeteSearch->fetchAll() as $results){
     ?>
- <p>
+ <p class="resultat">
     titre =<?= $results['titre'] ?>
-    <?= $results['annee_sortie'] ?>
-    <?= $results['resume'] ?>
-    <?= $results['duree_film'] ?>
+    Année SORTIE =<?= $results['annee_sortie'] ?>
+    Resumé =<?= $results['resume'] ?>
+    durrée Film=<?= $results['duree_film'] ?>
 
     </p>
  

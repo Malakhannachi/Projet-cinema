@@ -7,8 +7,8 @@
             </figure>
             <div class="btn_reserver">
                 <h2>AVATAR</h2>
-                <div class="btn"><button>Réserver</button></div>
-                <div class="plus"><i class="fas fa-plus"></i></div>
+                
+                
             </div>
         </section>
         <section id="films"></section>
@@ -18,9 +18,13 @@
              <li><img src="public/img/aladin.jpg" alt="film Aladin"></li>
              <li><img src="public/img/bad boys.jpg" alt="film bad boys"></li>
              <li><img src="public/img/belle et bete.jpg" alt="film belle et bete"></li>
-             <li><img src="public/img/mr et mrs smith.jpg" alt="film true lies"></li>
-             
+             <li><img src="public/img/mr et mrs smith.jpg" alt="film true lies"></li>   
             </ul>
+            <div class="btn">
+                <button >
+                    <a href="index.php?action=addFilms">Ajouter un film</a>
+                </button>
+            </div>
         </div>
     </main>
    

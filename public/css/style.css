@@ -53,15 +53,7 @@ ul li a{
     border-radius: 10px;
     color: black;
 }
-.uk-button{
-    border: none;
-    
-    width: 150px;
-    height: 15px;
-    padding: 10px;
-    border-radius: 10px;
-    
-}
+
 
 .container{
     min-width: 100%;
@@ -86,14 +78,22 @@ ul li a{
     position: absolute;      /* positionne le bouton au coin en bas a droite  */
     bottom: 100px;
     right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2{
     color: white;
     padding: 10px;
+    font-size: 100px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial,  ;
+
 }
 .btn{
     padding: 10px;
+    width: 200px;
+    height: 50px;
 }   
 .plus{
     padding: 10px;
@@ -121,5 +121,10 @@ h2{
     font-size: 20px;
     color: white;
     background-color: black;
+    padding: 10px;
+}
+.resultat {
+    color: white;
+    font-size: 20px;
     padding: 10px;
 }
